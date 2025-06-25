@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Factorial Of Numbers</title>
+  <style>
+    body {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      background: #f0f0f0;
+      padding: 200px;
+    }
+    .container {
+      background: rgb(255, 255, 255);
+      padding: 20px;
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px gray;
+    }
+    input, button {
+      padding: 10px;
+      margin-top: 10px;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    #result {
+      margin-top: 15px;
+      font-weight: bold;
+    } 
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Factorial Of Numbers</h2>
+  <label for="number">Enter The Number:</label>
+  <input type="number" id="number" placeholder="eg 3">
+  <button onclick="calculatefactorial()">Calculate</button>
+  <p id="result"></p>
+</div>
+
+<script>
+  function calculatefactorial() {
+    var number = document.getElementById("number").value;
+    var result = document.getElementById("result");
+     if (isNaN(number)) {
+      result.innerText = "❌ Please enter a valid number.";
+    } else if (number < 0) {
+      result.innerText = "❌ Factorial is not defined for negative numbers.";
+    } 
+    else {
+    let factorial =1
+    for ( let i = 1 ; i<=number ; i++){
+    factorial = factorial*i
+    }
+        result.innerText = `✅ Factorial of ${number} is ${factorial}`;
+    }
+  }
+</script>
+
+</body>
+</html>
